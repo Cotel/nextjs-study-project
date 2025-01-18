@@ -1,0 +1,15 @@
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+[*.{cjs,js,json,yml,ts,tsx}]
+charset = utf-8
+indent_style = space
+indent_size = 2
+ij_typescript_enforce_trailing_comma = keep
+ij_json_keep_trailing_comma = true
+
+[*.{js,ts,tsx}]
+max_line_length = 80
