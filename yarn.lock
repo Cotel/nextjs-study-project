@@ -102,6 +102,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@faker-js/faker@npm:^9.4.0":
+  version: 9.4.0
+  resolution: "@faker-js/faker@npm:9.4.0"
+  checksum: 10c0/52f242a764b506f84f0f80e8122758a4b4a82873d72e67b5ddee9d8132c33d462705b43543dd0b86b743f54daec668a1938b9e5b9d643c606a775fb48959580c
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.1":
   version: 0.19.1
   resolution: "@humanfs/core@npm:0.19.1"
@@ -1182,6 +1189,7 @@ __metadata:
   resolution: "enriconsolas@workspace:."
   dependencies:
     "@eslint/eslintrc": "npm:^3"
+    "@faker-js/faker": "npm:^9.4.0"
     "@types/node": "npm:^20"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
@@ -1198,6 +1206,7 @@ __metadata:
     prettier: "npm:3.4.2"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
+    ts-money: "npm:^0.4.8"
     typescript: "npm:^5"
   languageName: unknown
   linkType: soft
@@ -2544,6 +2553,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash@npm:^4.17.5":
+  version: 4.17.21
+  resolution: "lodash@npm:4.17.21"
+  checksum: 10c0/d8cbea072bb08655bb4c989da418994b073a608dffa608b09ac04b43a791b12aeae7cd7ad919aa4c925f33b48490b5cfe6c1f71d827956071dae2e7bb3a6b74c
+  languageName: node
+  linkType: hard
+
 "log-update@npm:^6.1.0":
   version: 6.1.0
   resolution: "log-update@npm:6.1.0"
@@ -3647,6 +3663,15 @@ __metadata:
   peerDependencies:
     typescript: ">=4.8.4"
   checksum: 10c0/6165e29a5b75bd0218e3cb0f9ee31aa893dbd819c2e46dbb086c841121eb0436ed47c2c18a20cb3463d74fd1fb5af62e2604ba5971cc48e5b38ebbdc56746dfc
+  languageName: node
+  linkType: hard
+
+"ts-money@npm:^0.4.8":
+  version: 0.4.8
+  resolution: "ts-money@npm:0.4.8"
+  dependencies:
+    lodash: "npm:^4.17.5"
+  checksum: 10c0/12c72f1c5088efa81bdb4be5f1d16846a1eb4da28ad15af4d70ce98e94668e9b46a7f038e80e34dc64089da6265f165c9d95d128c5dde14186568c21cf964b3c
   languageName: node
   linkType: hard
 

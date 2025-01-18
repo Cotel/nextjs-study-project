@@ -70,7 +70,6 @@ module.exports = {
               'index',
               'object'
             ],
-            'newlines-between': 'always',
             alphabetize: { order: 'asc', caseInsensitive: true },
           }
         ],
@@ -78,28 +77,39 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         'jsx-a11y/anchor-is-valid': 'off',
         '@typescript-eslint/no-unused-vars': ['error'],
-        'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+        'prettier/prettier': ['off', {}, { usePrettierrc: true }],
+      }
+    },
+    {
+      plugins: ['check-file'],
+      files: ['src/**/*'],
+      excludedFiles: [
+        'src/app/**/route.ts',
+        'src/app/**/layout.tsx',
+        'src/app/**/layout.module.scss',
+        'src/app/**/page.tsx',
+        'src/app/**/page.module.scss',
+      ],
+      rules: {
         'check-file/filename-naming-convention': [
           'error',
           {
-            '**/*.{ts,tsx}': 'CAMEL_CASE'
+            '**/*.{ts,tsx,css}': 'PASCAL_CASE',
           },
+        ],
+        'check-file/folder-naming-convention': [
+          'error',
           {
-            ignoreMiddleExtensions: true
-          }
-        ]
-      }
+            '!(src/app)/**/*': 'CAMEL_CASE',
+            '!(**/__tests__)/**/*': 'CAMEL_CASE',
+          },
+        ],
+      },
     },
     {
       plugins: ['check-file'],
       files: ['src/**/!(__tests__)/*'],
       rules: {
-        'check-file/folder-naming-convention': [
-          'error',
-          {
-            '**/*': 'CAMEL_CASE',
-          }
-        ]
       }
     }
   ]

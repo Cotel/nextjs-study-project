@@ -1,0 +1,18 @@
+openapi: 3.1.0
+info:
+  title: Enriconsolas API
+  version: 1.0.0
+servers:
+  - url: 'http:/localhost:3000/api'
+paths:
+  /consoles:
+    get:
+      summary: Returns a list of all videogame consoles
+  
+  /users:
+    get:
+      summary: Returns a list of all users in the platform
+
+  /listings:
+    get:
+      summary: Returns a list of all published listings
