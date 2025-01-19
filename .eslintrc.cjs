@@ -89,6 +89,8 @@ module.exports = {
         'src/app/**/layout.module.scss',
         'src/app/**/page.tsx',
         'src/app/**/page.module.scss',
+        'src/middleware.ts',
+        'src/i18n/*',
       ],
       rules: {
         'check-file/filename-naming-convention': [
