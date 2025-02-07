@@ -19,18 +19,10 @@
       }
     ],
     "paths": {
-      "@/shared/*": [
-        "./src/shared/*"
-      ],
-      "@/consoles/*": [
-        "./src/contexts/consoles/*"
-      ],
-      "@/users/*": [
-        "./src/contexts/users/*"
-      ],
-      "@/listings/*": [
-        "./src/contexts/listings/*"
-      ],
+      "@/shared/*": ["./src/shared/*"],
+      "@/consoles/*": ["./src/contexts/consoles/*"],
+      "@/users/*": ["./src/contexts/users/*"],
+      "@/listings/*": ["./src/contexts/listings/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

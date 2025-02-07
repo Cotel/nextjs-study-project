@@ -1,12 +1,10 @@
-import { getVideogameConsoles } from '@/consoles/application/GetVideogameConsoles';
-import {
-  InMemoryVideogameConsoleRepository
-} from '@/consoles/data/InMemoryVideogameConsoleRepository';
+import { getVideogameConsoles } from '@/consoles/application/GetVideogameConsoles'
+import { InMemoryVideogameConsoleRepository } from '@/consoles/data/InMemoryVideogameConsoleRepository'
 
 export async function GET(): Promise<Response> {
-  const repository = InMemoryVideogameConsoleRepository.getInstance();
+  const repository = InMemoryVideogameConsoleRepository.getInstance()
 
-  const data = await getVideogameConsoles(repository);
+  const data = await getVideogameConsoles(repository)
 
-  return Response.json(data);
+  return Response.json(data)
 }

@@ -1,16 +1,16 @@
-import { Money } from 'ts-money';
+import { Money } from 'ts-money'
 
 export interface Listing {
-  id: string;
-  consoleId: string;
-  sellerId: string;
-  price: Money;
-  details: ListingDetails;
+  id: string
+  consoleId: string
+  sellerId: string
+  price: Money
+  details: ListingDetails
 }
 
 export interface ListingDetails {
-  consoleHealth: ListingConsoleHealth;
-  message?: string;
+  consoleHealth: ListingConsoleHealth
+  message?: string
 }
 
 export enum ListingConsoleHealth {

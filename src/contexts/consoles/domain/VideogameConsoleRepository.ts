@@ -1,7 +1,7 @@
-import { VideogameConsole } from './VideogameConsole';
+import { VideogameConsole } from './VideogameConsole'
 
 export interface VideogameConsoleRepository {
-  findAll(): Promise<VideogameConsole[]>;
+  findAll(): Promise<VideogameConsole[]>
 
-  findOne(id: string): Promise<VideogameConsole>;
+  findOne(id: string): Promise<VideogameConsole>
 }

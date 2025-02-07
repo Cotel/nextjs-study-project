@@ -7,9 +7,16 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint:next": "next lint",
+    "lint": "biome check --write",
     "prepare": "husky",
     "check-types": "tsc --project tsconfig.json --pretty --noEmit"
+  },
+  "lint-staged": {
+    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+      "biome check --write --no-errors-on-unmatched",
+      "bash -c 'yarn check-types'"
+    ]
   },
   "dependencies": {
     "@radix-ui/themes": "^3.1.6",
@@ -21,6 +28,7 @@
     "ts-money": "^0.4.8"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@eslint/eslintrc": "^3",
     "@faker-js/faker": "^9.4.0",
     "@types/node": "^20",

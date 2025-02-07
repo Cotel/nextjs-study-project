@@ -1,8 +1,8 @@
-import { UserProfile } from './UserProfile';
+import { UserProfile } from './UserProfile'
 
 export interface User {
-  id: string;
-  username: string;
-  email: string;
-  profile: UserProfile;
+  id: string
+  username: string
+  email: string
+  profile: UserProfile
 }
