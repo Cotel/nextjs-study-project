@@ -2,12 +2,10 @@ module.exports = {
   root: true,
   env: {
     node: true,
-    es6: true
+    es6: true,
   },
-  parserOptions: {ecmaVersion: 'latest', sourceType: 'module'},
-  ignorePatterns: [
-    "node_modules/*",
-  ],
+  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  ignorePatterns: ['node_modules/*'],
   extends: ['eslint:recommended', 'next/core-web-vitals'],
   plugins: ['check-file'],
   overrides: [
@@ -17,8 +15,8 @@ module.exports = {
       settings: {
         react: { version: 'detect' },
         'import/resolver': {
-          typescript: {}
-        }
+          typescript: {},
+        },
       },
       env: {
         browser: true,
@@ -39,7 +37,7 @@ module.exports = {
         'plugin:jest-dom/recommended',
       ],
       rules: {
-        "import/no-restricted-paths": [
+        'import/no-restricted-paths': [
           'error',
           {
             zones: [
@@ -47,14 +45,14 @@ module.exports = {
               // e. g: src/app can import from src/contexts but not the other way around
               {
                 target: './src/contexts',
-                from: './src/app'
+                from: './src/app',
               },
               {
                 target: './src/shared',
-                from: ['./src/features', './src/app']
-              }
-            ]
-          }
+                from: ['./src/features', './src/app'],
+              },
+            ],
+          },
         ],
         'import/no-cycle': 'error',
         'linebreak-style': ['error', 'unix'],
@@ -68,17 +66,17 @@ module.exports = {
               'parent',
               'sibling',
               'index',
-              'object'
+              'object',
             ],
             alphabetize: { order: 'asc', caseInsensitive: true },
-          }
+          },
         ],
         'import/default': 'off',
         'react/react-in-jsx-scope': 'off',
         'jsx-a11y/anchor-is-valid': 'off',
         '@typescript-eslint/no-unused-vars': ['error'],
         'prettier/prettier': ['off', {}, { usePrettierrc: true }],
-      }
+      },
     },
     {
       plugins: ['check-file'],
@@ -111,8 +109,7 @@ module.exports = {
     {
       plugins: ['check-file'],
       files: ['src/**/!(__tests__)/*'],
-      rules: {
-      }
-    }
-  ]
+      rules: {},
+    },
+  ],
 }

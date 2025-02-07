@@ -1,5 +1,5 @@
-import { UserRepository } from '@/users/domain/UserRepository';
+import { UserRepository } from '@/users/domain/UserRepository'
 
 export const getUsers = async (repository: UserRepository) => {
-  return repository.findAll();
-};
+  return repository.findAll()
+}

@@ -1,10 +1,10 @@
-import { getUsers } from '@/users/application/GetUsers';
-import { InMemoryUserRepository } from '@/users/data/InMemoryUserRepository';
+import { getUsers } from '@/users/application/GetUsers'
+import { InMemoryUserRepository } from '@/users/data/InMemoryUserRepository'
 
 export async function GET(): Promise<Response> {
-  const repository = InMemoryUserRepository.getInstance();
+  const repository = InMemoryUserRepository.getInstance()
 
-  const data = await getUsers(repository);
+  const data = await getUsers(repository)
 
-  return Response.json(data);
+  return Response.json(data)
 }

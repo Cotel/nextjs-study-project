@@ -1,4 +1,4 @@
 export interface UserProfile {
-  fullName?: string;
-  avatarUrl?: string;
+  fullName?: string
+  avatarUrl?: string
 }

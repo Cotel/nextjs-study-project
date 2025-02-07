@@ -1,9 +1,10 @@
-import { NavBar } from '@/shared/components/organisms/NavBar/NavBar';
+import { NavBar } from '@/shared/components/organisms/NavBar/NavBar'
+import React from 'react'
 
 export default function LandingLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <>
@@ -11,5 +12,5 @@ export default function LandingLayout({
 
       {children}
     </>
-  );
+  )
 }

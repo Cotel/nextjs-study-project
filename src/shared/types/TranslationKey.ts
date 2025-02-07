@@ -1,1 +1,1 @@
-export type TranslationKey = string;
+export type TranslationKey = string
