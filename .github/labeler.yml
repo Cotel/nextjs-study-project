@@ -1,0 +1,14 @@
+release:
+  - base-branch: 'main'
+
+feat:
+  - head-branch: '^feat\/'
+
+fix:
+  - head-branch: '^fix\/'
+
+minor:
+  - head-branch: '^feat\/'
+
+patch:
+  - head-branch: '^fix\/'
