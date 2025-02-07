@@ -1,4 +1,4 @@
-import { getUsers } from '@/users/api/GetUsers';
+import { getUsers } from '@/users/application/GetUsers';
 import { InMemoryUserRepository } from '@/users/data/InMemoryUserRepository';
 
 export async function GET(): Promise<Response> {

@@ -1,4 +1,4 @@
-import { getVideogameConsoles } from '@/consoles/api/GetVideogameConsoles';
+import { getVideogameConsoles } from '@/consoles/application/GetVideogameConsoles';
 import {
   InMemoryVideogameConsoleRepository
 } from '@/consoles/data/InMemoryVideogameConsoleRepository';

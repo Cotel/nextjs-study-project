@@ -13,7 +13,7 @@ export const NavBar = () => {
           href="/"
           underline="none"
           weight="bold"
-          size="6"
+          size="5"
         >
           Enriconsolas
         </Link>

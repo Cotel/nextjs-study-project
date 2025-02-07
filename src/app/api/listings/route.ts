@@ -1,7 +1,7 @@
 import {
   InMemoryVideogameConsoleRepository
 } from '@/consoles/data/InMemoryVideogameConsoleRepository';
-import { getListings } from '@/listings/api/GetListings';
+import { getListings } from '@/listings/application/GetListings';
 import {
   InMemoryListingRepository
 } from '@/listings/data/InMemoryListingRepository';

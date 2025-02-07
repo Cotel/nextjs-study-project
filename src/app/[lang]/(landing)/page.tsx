@@ -1,12 +1,30 @@
 import { Box, Container, Flex, Heading, Text } from '@radix-ui/themes';
 import { useTranslations } from 'next-intl';
+import { Listing } from '@/listings/application/Listing';
+import { getTranslations } from 'next-intl/server';
 
-export default function LandingPage() {
+const preloadData = async () => {
+  const data = await fetch("http://localhost:3000/api/listings")
+  return data.json();
+}
+
+const LandingPage = async () => {
+  const t = await getTranslations('landing')
+
+  const data = await preloadData()
+
+  console.log(data)
+
   return (
     <Container size="2" asChild>
       <Flex>
         <Callout />
 
+        <Flex>
+          <Heading size="5">{t('popularListings')}</Heading>
+
+
+        </Flex>
       </Flex>
     </Container>
   );
@@ -36,3 +54,5 @@ const Callout = () => {
     </Box>
   );
 };
+
+export default LandingPage
