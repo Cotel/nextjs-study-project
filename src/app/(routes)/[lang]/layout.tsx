@@ -1,12 +1,12 @@
 import { Theme } from '@radix-ui/themes'
 import type { Metadata } from 'next'
 import '@radix-ui/themes/styles.css'
-import '@/shared/styles/globals.css'
+import '../../(styles)/globals.css'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import React from 'react'
-import { routing } from '../../i18n/routing'
+import { routing } from '../../(i18n)/routing'
 
 export const metadata: Metadata = {
   title: 'Create Next App',

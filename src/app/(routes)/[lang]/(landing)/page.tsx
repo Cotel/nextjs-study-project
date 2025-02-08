@@ -1,4 +1,3 @@
-import { Listing } from '@/listings/application/Listing'
 import { Box, Container, Flex, Heading, Text } from '@radix-ui/themes'
 import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'

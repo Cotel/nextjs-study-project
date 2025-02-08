@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto'
 import { Listing, ListingConsoleHealth } from '@/listings/domain/Listing'
 import { ListingRepository } from '@/listings/domain/ListingRepository'
-import { Random } from '@/shared/utils/Random'
+import { Random } from '@/shared/domain/Random'
 import { faker } from '@faker-js/faker/locale/en'
 import { Money } from 'ts-money'
 

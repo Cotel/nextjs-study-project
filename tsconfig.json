@@ -19,7 +19,7 @@
       }
     ],
     "paths": {
-      "@/shared/*": ["./src/shared/*"],
+      "@/shared/*": ["./src/contexts/shared/*"],
       "@/consoles/*": ["./src/contexts/consoles/*"],
       "@/users/*": ["./src/contexts/users/*"],
       "@/listings/*": ["./src/contexts/listings/*"]
