@@ -1,7 +1,7 @@
-import { InMemoryVideogameConsoleRepository } from '@/consoles/data/InMemoryVideogameConsoleRepository'
+import { InMemoryVideogameConsoleRepository } from '@/consoles/infra/InMemoryVideogameConsoleRepository'
 import { getListings } from '@/listings/application/GetListings'
-import { InMemoryListingRepository } from '@/listings/data/InMemoryListingRepository'
-import { InMemoryUserRepository } from '@/users/data/InMemoryUserRepository'
+import { InMemoryListingRepository } from '@/listings/infra/InMemoryListingRepository'
+import { InMemoryUserRepository } from '@/users/infra/InMemoryUserRepository'
 
 export async function GET(): Promise<Response> {
   const repository = InMemoryListingRepository.getInstance()
