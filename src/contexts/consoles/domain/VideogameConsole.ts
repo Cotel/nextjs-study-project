@@ -1,4 +1,4 @@
-import { TranslationKey } from '../../shared/domain/TranslationKey'
+import { TranslationKey } from '@/shared/domain/TranslationKey'
 
 export interface VideogameConsole {
   id: string
