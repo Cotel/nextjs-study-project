@@ -1,4 +1,7 @@
-import { VideogameConsole } from '../domain/VideogameConsole'
+import {
+  VideogameConsole,
+  VideogameConsoleCategory,
+} from '../domain/VideogameConsole'
 import { VideogameConsoleRepository } from '../domain/VideogameConsoleRepository'
 
 export class InMemoryVideogameConsoleRepository
@@ -20,10 +23,14 @@ export class InMemoryVideogameConsoleRepository
       id: 'playstation-5',
       name: 'PlayStation 5',
       info: {
-        manufacturer: 'Sony',
         description: 'consoles.playstation-5.description',
         launchYear: 2020,
       },
+      manufacturer: {
+        id: 'sony',
+        name: 'Sony',
+      },
+      category: VideogameConsoleCategory.HOME_SYSTEM,
     },
   }
 

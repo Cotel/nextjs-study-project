@@ -21,8 +21,10 @@
     "paths": {
       "@/shared/*": ["./src/contexts/shared/*"],
       "@/consoles/*": ["./src/contexts/consoles/*"],
+      "@/manufacturers/*": ["./src/contexts/manufacturers/*"],
       "@/users/*": ["./src/contexts/users/*"],
-      "@/listings/*": ["./src/contexts/listings/*"]
+      "@/listings/*": ["./src/contexts/listings/*"],
+      "@/publicAssets/*": ["./public/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
