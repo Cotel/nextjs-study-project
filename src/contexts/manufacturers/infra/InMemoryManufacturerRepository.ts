@@ -1,7 +1,7 @@
 import { Manufacturer } from '../domain/Manufacturer'
 import { ManufacturerRepository } from '../domain/ManufacturerRepository'
 
-export class ManufacturerRepositoryImpl implements ManufacturerRepository {
+export class InMemoryManufacturerRepository implements ManufacturerRepository {
   private manufacturers: Record<string, Manufacturer> = {
     sony: { id: 'sony', name: 'Sony' },
     nintendo: { id: 'nintendo', name: 'Nintendo' },
@@ -10,5 +10,9 @@ export class ManufacturerRepositoryImpl implements ManufacturerRepository {
 
   async findAll(): Promise<Manufacturer[]> {
     return Object.values(this.manufacturers)
+  }
+
+  setData(data: Record<string, Manufacturer>) {
+    this.manufacturers = data
   }
 }

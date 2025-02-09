@@ -1,7 +1,7 @@
 import { GetVideogameConsoles } from '@/consoles/application/GetVideogameConsoles'
 import { InMemoryVideogameConsoleRepository } from '@/consoles/infra/InMemoryVideogameConsoleRepository'
 import { GetAllManufacturers } from '@/manufacturers/application/GetAllManufacturers'
-import { DrizzleManufacturerRepository } from '@/manufacturers/infra/DrizzleManufacturerRepository'
+import { InMemoryManufacturerRepository } from '@/manufacturers/infra/InMemoryManufacturerRepository'
 import { drizzle } from 'drizzle-orm/node-postgres'
 
 export const databaseConnection = drizzle({
@@ -11,9 +11,10 @@ export const databaseConnection = drizzle({
   },
 })
 
-const manufacturersRepository = new DrizzleManufacturerRepository(
+/*const manufacturersRepository = new DrizzleManufacturerRepository(
   databaseConnection,
-)
+)*/
+const manufacturersRepository = new InMemoryManufacturerRepository()
 const videoConsolesRepository = new InMemoryVideogameConsoleRepository()
 
 const getAllManufacturers = new GetAllManufacturers(manufacturersRepository)
