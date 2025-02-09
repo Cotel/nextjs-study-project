@@ -16,3 +16,7 @@ paths:
   /listings:
     get:
       summary: Returns a list of all published listings
+
+  /manufacturers:
+    get:
+      summary: Returns a list of all videogame console manufacturers
