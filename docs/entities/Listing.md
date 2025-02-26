@@ -12,7 +12,7 @@ Representación de una oferta de venta en la plataforma.
 * productStatus: estado del producto, puede ser "new", "used" o "veryUsed".
 * productCategoryId: identificador de la categoría del producto.
 * sellerId: identificador único del vendedor.
-* sellingStatus: estado de la venta, puede ser "selling", "reserved" o "sold".
+* sellingStatus: estado de la venta, puede ser "selling" o "sold".
 
 ## Pseudocódigo
 
@@ -26,6 +26,6 @@ interface Listing {
   productStatus: "new" | "used" | "veryUsed"
   productCategoryId: string
   sellerId: string
-  sellingStatus : "selling" | "reserved" | "sold"
+  sellingStatus : "selling" | "sold"
 }
 ```

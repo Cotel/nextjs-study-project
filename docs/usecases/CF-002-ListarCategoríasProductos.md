@@ -23,3 +23,9 @@ No aplica.
 
 ## 7. 🔄 Flujos Alternativos
 No aplica.
+
+## 8. ✅ Postcondiciones
+No aplica.
+
+## 9. ⚠️ Excepciones
+No aplica.
