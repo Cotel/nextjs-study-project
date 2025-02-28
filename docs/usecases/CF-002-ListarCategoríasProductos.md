@@ -1,31 +1,33 @@
-# 🌟 CF-002 - Listar Categorías de producto
+# 🌟 CF-002 - Listar categorías de producto
 
-## 1. 🎯 Descripción
-Obtener todas las categorías de productos.
+## 1. 📝 Descripción  
+Obtener todas las categorías de productos disponibles en el sistema.
 
-## 2. 👤 Actor Principal
+## 2. 🧑‍💻 Actor Principal  
 Usuario.
 
-## 3. 📥 Entradas
-Obligatorio:
-* No aplica
-Opcional:
+## 3. 📥 Entradas  
+Obligatorio:  
+* Ninguna.  
 
-## 4. 📤 Salidas
-Categorías
+Opcional:  
+* No aplica.
 
-## 5. 🔍 Precondiciones
+## 4. 📤 Salidas  
+Lista de categorías de productos.
+
+## 5. 🔍 Condiciones Previas  
 No aplica.
 
-## 6. 🛠️ Flujo Básico
-1. El sistema procesa la solicitud y busca las categorías.
-2. El sistema muestra la lista de categorías encontradas al usuario.
+## 6. 🛠 Flujo Principal  
+1. El sistema procesa la solicitud y obtiene las categorías disponibles.  
+2. El sistema presenta la lista de categorías al usuario.
 
-## 7. 🔄 Flujos Alternativos
+## 7. 🔄 Flujos Alternativos  
 No aplica.
 
-## 8. ✅ Postcondiciones
+## 8. ✅ Postcondiciones  
 No aplica.
 
-## 9. ⚠️ Excepciones
+## 9. ⚠️ Excepciones  
 No aplica.
