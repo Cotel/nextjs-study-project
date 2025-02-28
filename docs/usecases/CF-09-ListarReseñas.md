@@ -1,4 +1,4 @@
-# 🌟 CF-009 - Listar Reseñas
+# 🌟 CF-010 - Listar Reseñas
 
 ## 1. 📝 Descripción  
 Obtener todas las reseñas disponibles en la plataforma asociadas al perfil de un vendedor.
