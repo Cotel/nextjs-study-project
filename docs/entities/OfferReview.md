@@ -1,4 +1,4 @@
-# Review
+# OfferReview
 
 ## Descripción
 Representación de una resenya en la plataforma.
@@ -16,7 +16,7 @@ Representación de una resenya en la plataforma.
 interface OfferReview {
   id: string
   buyerId: string
-  userImageUrl: string
+  buyerImageUrl: string
   content: string
   offerTitle: string
   date: date
