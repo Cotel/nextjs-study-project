@@ -1,4 +1,4 @@
-# OfferReview
+# Review
 
 ## Descripción
 Representación de una resenya en la plataforma.
@@ -6,19 +6,19 @@ Representación de una resenya en la plataforma.
 ## Propiedades
 * id: Identificador único de la reseña.
 * buyerId: Identificador único del comprador.
-* userImageUrl: URL de la imagen del usuario que escribió la reseña.
+* score: Puntuación de la reseña (1-5).
+* productId: Identificador único del producto.
 * content: Texto de la reseña, que describe la experiencia del comprador con la oferta.
-* offerTitle: Título de la oferta sobre la que se realiza la reseña.
 * date: Fecha en la que se escribió la reseña.
 
 ## Pseudocódigo
 ```typescript
-interface OfferReview {
+interface Review {
   id: string
   buyerId: string
-  buyerImageUrl: string
+  score: number
+  productId: string
   content: string
-  offerTitle: string
-  date: date
+  date: string
 }
 ```
