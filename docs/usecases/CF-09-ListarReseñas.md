@@ -8,7 +8,7 @@ Usuario.
 
 ## 3. 📥 Entradas  
 Obligatorio:  
-* No aplica.  
+* Id del vendedor.  
 
 Opcional:  
 * No aplica.

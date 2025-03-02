@@ -1,4 +1,4 @@
-# Listing
+# Product
 
 ## Descripción
 Representación de una oferta de venta en la plataforma.
@@ -16,7 +16,7 @@ Representación de una oferta de venta en la plataforma.
 
 ## Pseudocódigo
 ```typescript
-interface ListingOffer {
+interface Product {
   sellerId: string
   id: string
   imageUrl: string
