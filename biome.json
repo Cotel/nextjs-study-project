@@ -98,6 +98,16 @@
           "a11y": { "useValidAnchor": "off" }
         }
       }
+    },
+    {
+      "include": ["./tests/**/*.test.ts", "./tests/**/*.test.tsx"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUndeclaredVariables": "off"
+          }
+        }
+      }
     }
   ]
 }
