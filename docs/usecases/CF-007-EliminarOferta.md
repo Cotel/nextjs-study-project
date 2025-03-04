@@ -1,4 +1,4 @@
-# 🌟 CF-007 - Eliminar Oferta
+## 🌟 CF-007 - Eliminar Oferta
 
 ## 1. 📝 Descripción  
 Un vendedor elimina una oferta previamente creada.
@@ -20,7 +20,7 @@ Oferta eliminada.
 1. El usuario debe ser el propietario de la oferta.  
 2. El estado de la oferta debe ser diferente a "sold".
 
-## 6. 🛠 Flujo Principal  
+## 6. 🛠️ Flujo Principal
 1. El vendedor inicia el proceso para eliminar una oferta.  
 2. El sistema solicita una confirmación para proceder con la eliminación.  
 3. El vendedor acepta la confirmación y envía la solicitud.  

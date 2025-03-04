@@ -1,4 +1,4 @@
-# 🌟 CF-006 - Editar Oferta
+## 🌟 CF-006 - Editar Oferta
 
 ## 1. 📝 Descripción  
 Un vendedor edita los detalles de una oferta previamente creada.
@@ -20,7 +20,7 @@ Oferta actualizada.
 1. El usuario debe ser el propietario de la oferta.  
 2. El estado de la oferta debe ser diferente a "sold".
 
-## 6. 🛠 Flujo Principal  
+## 6. 🛠️ Flujo Principal  
 1. El sistema presenta un formulario con los campos de la oferta para su edición.  
 2. El vendedor modifica los campos que desea actualizar.  
 3. El sistema valida el formato de los datos introducidos.  

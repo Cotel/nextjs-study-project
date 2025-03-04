@@ -1,4 +1,4 @@
-# ListingOffer
+# Listing
 
 ## Descripción
 Representación de una oferta de venta en la plataforma.

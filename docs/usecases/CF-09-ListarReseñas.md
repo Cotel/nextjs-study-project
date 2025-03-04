@@ -1,4 +1,4 @@
-# 🌟 CF-010 - Listar Reseñas
+## 🌟 CF-010 - Listar Reseñas
 
 ## 1. 📝 Descripción  
 Obtener todas las reseñas disponibles en la plataforma asociadas al perfil de un vendedor.
@@ -19,7 +19,7 @@ Lista de reseñas del vendedor.
 ## 5. 🔍 Precondiciones  
 No aplica.
 
-## 6. 🛠 Flujo Principal  
+## 6. 🛠️ Flujo Principal  
 1. El usuario accede a la página del perfil del vendedor.  
 2. El sistema presenta la lista de reseñas asociadas al perfil del vendedor.
 
