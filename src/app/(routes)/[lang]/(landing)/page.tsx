@@ -2,17 +2,8 @@ import { Box, Container, Flex, Heading, Text } from '@radix-ui/themes'
 import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 
-const preloadData = async () => {
-  const data = await fetch('http://localhost:3000/api/listings')
-  return data.json()
-}
-
 const LandingPage = async () => {
   const t = await getTranslations('landing')
-
-  const data = await preloadData()
-
-  console.log(data)
 
   return (
     <Container size="2" asChild>
