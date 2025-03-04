@@ -1,11 +1,16 @@
 'use server'
 
-import { createUser } from '@core/users/services/createUser'
+import { DrizzleUserRepository } from '@infra/users/DrizzleUserRepository'
+
+import { SignUpUserWithCredentials } from '@core/users/application/usecases/SignUpUserWithCredentials'
 
 export const generateFakeUser = async () => {
   console.log('Generating fake user')
 
-  return await createUser({
+  const repository = new DrizzleUserRepository()
+  const useCase = new SignUpUserWithCredentials(repository)
+
+  return await useCase.execute({
     email: 'test@test.com',
     name: 'Test User',
     password: 'password',

@@ -1,5 +1,5 @@
 import { DrizzleAdapter } from '@auth/drizzle-adapter'
-import bcrypt from 'bcryptjs'
+import { UserPassword } from '@core/users/entities/UserPassword'
 import { eq } from 'drizzle-orm'
 import NextAuth from 'next-auth'
 import Credentials from 'next-auth/providers/credentials'
@@ -34,17 +34,21 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           return null
         }
 
-        // Verify password
-        const isValid = await bcrypt.compare(
-          password as string,
-          user.passwordHash,
-        )
+        // Validate password using domain entity
+        const isValid = await UserPassword.checkPassword({
+          hash: user.passwordHash,
+          password: password as string,
+        })
 
         if (!isValid) {
           return null
         }
 
-        return user.user
+        return {
+          id: user.user.id,
+          name: user.user.name,
+          email: user.user.email,
+        }
       },
     }),
   ],

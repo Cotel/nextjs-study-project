@@ -24,7 +24,9 @@
       "@infra/drizzle/*": ["./src/infra/drizzle/*"],
       "@core/shared/*": ["./src/contexts/shared/*"],
       "@core/productCategories/*": ["./src/contexts/productCategories/*"],
-      "@core/users/*": ["./src/contexts/users/*"]
+      "@infra/productCategories/*": ["./src/infra/productCategories/*"],
+      "@core/users/*": ["./src/contexts/users/*"],
+      "@infra/users/*": ["./src/infra/users/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
