@@ -100,6 +100,7 @@ const config: Config = {
     '^@core/shared/(.*)$': '<rootDir>/src/contexts/shared/$1',
     '^@core/productCategories/(.*)$':
       '<rootDir>/src/contexts/productCategories/$1',
+    '^@core/users/(.*)$': '<rootDir>/src/contexts/users/$1',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

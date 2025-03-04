@@ -1,7 +1,7 @@
-import { randomUUID } from 'node:crypto'
+import { randomUUID } from 'crypto'
 
 export type Uuid = string
 
-export const generateUuid = (): Uuid => {
+export const generateUuid = () => {
   return randomUUID()
 }

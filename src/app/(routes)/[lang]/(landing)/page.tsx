@@ -1,25 +1,26 @@
 import { Box, Container, Flex, Heading, Text } from '@radix-ui/themes'
-import { useTranslations } from 'next-intl'
+import { SignInForm } from '@ui/components/organisms/SignInForm/SignInForm'
 import { getTranslations } from 'next-intl/server'
+import { GenerateFakeUserButton } from './GenerateFakeUserButton'
 
 const LandingPage = async () => {
-  const t = await getTranslations('landing')
-
   return (
     <Container size="2" asChild>
       <Flex>
         <Callout />
 
         <Flex>
-          <Heading size="5">{t('popularListings')}</Heading>
+          <SignInForm />
         </Flex>
+
+        <GenerateFakeUserButton />
       </Flex>
     </Container>
   )
 }
 
-const Callout = () => {
-  const t = useTranslations('landing')
+const Callout = async () => {
+  const t = await getTranslations('landing')
 
   return (
     <Box

@@ -20,8 +20,11 @@
     ],
     "paths": {
       "@ui/components/*": ["./src/app/_components/*"],
+      "@infra/auth/*": ["./src/infra/auth/*"],
+      "@infra/drizzle/*": ["./src/infra/drizzle/*"],
       "@core/shared/*": ["./src/contexts/shared/*"],
-      "@core/productCategories/*": ["./src/contexts/productCategories/*"]
+      "@core/productCategories/*": ["./src/contexts/productCategories/*"],
+      "@core/users/*": ["./src/contexts/users/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
