@@ -5,7 +5,6 @@ import {
   primaryKey,
   text,
   timestamp,
-  uuid,
   varchar,
 } from 'drizzle-orm/pg-core'
 import { AdapterAccountType } from 'next-auth/adapters'

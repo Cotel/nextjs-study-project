@@ -3,8 +3,7 @@ import {
   UnixTimestamp,
   getCurrentUnixTimestamp,
 } from '@core/shared/entities/UnixTimestamp'
-import { Uuid } from '@core/shared/entities/Uuid'
-import { generateUuid } from '@core/shared/entities/Uuid'
+import { Uuid, generateUuid } from '@core/shared/entities/Uuid'
 import { UserPassword } from './UserPassword'
 
 export type User = {
