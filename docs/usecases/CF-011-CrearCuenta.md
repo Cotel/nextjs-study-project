@@ -1,4 +1,4 @@
-# 🌟 CF-011 - Crear Cuenta
+## 🌟 CF-011 - Crear Cuenta
 
 ## 1. 📝 Descripción  
 Un usuario crea una cuenta.
@@ -19,7 +19,7 @@ Cuenta creada.
 ## 5. 🔍 Precondiciones 
 No aplica.
 
-## 6. 🛠 Flujo Principal  
+## 6. 🛠️ Flujo Principal  
 1. El sistema presenta un formulario para que el usuario complete los campos necesarios para crear la cuenta.  
 2. El usuario introduce la información solicitada.  
 3. El sistema valida el formato de los datos introducidos.  
@@ -36,7 +36,7 @@ No aplica.
     * Si no es posible procesar la solicitud, el sistema responde con un mensaje de error.
 
 ## 8. ✅ Postcondiciones  
-No aplica
+No aplica.
 
 ## 9. ⚠️ Excepciones  
 No aplica.
