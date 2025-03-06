@@ -1,4 +1,4 @@
-# 🌟 CF-003 - Ver Detalles de Oferta
+## 🌟 CF-003 - Ver Detalles de Oferta
 
 ## 1. 📝 Descripción  
 Un usuario visualiza la información detallada de una oferta.
@@ -16,10 +16,10 @@ Opcional:
 ## 4. 📤 Salidas  
 Detalles completos de la oferta.
 
-## 5. 🔍 Condiciones Previas  
+## 5. 🔍 Precondiciones  
 No aplica.
 
-## 6. 🛠 Flujo Principal  
+## 6. 🛠️ Flujo Principal 
 1. El usuario hace clic en una oferta.  
 2. El sistema devuelve los detalles completos de la oferta seleccionada.
 

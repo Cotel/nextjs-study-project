@@ -1,4 +1,4 @@
-# 🌟 CF-001 - Listar Ofertas
+## 🌟 CF-001 - Listar Ofertas
 
 ## 1. 📝 Descripción
 Obtener todas las ofertas disponibles en la plataforma según los criterios de búsqueda y/o clasificación seleccionados.

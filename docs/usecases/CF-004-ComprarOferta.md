@@ -1,4 +1,4 @@
-# 🌟 CF-004 - Comprar Oferta
+## 🌟 CF-004 - Comprar Oferta
 
 ## 1. 📝 Descripción  
 Un comprador adquiere una oferta.
@@ -19,7 +19,7 @@ La oferta comprada.
 ## 5. 🔍 Precondiciones 
 1. El comprador debe estar registrado e iniciado sesión.
 
-## 6. 🛠 Flujo Principal  
+## 6. 🛠️ Flujo Principal 
 1. El comprador hace clic en el botón "Comprar".  
 2. El sistema procesa la solicitud y cambia el estado de la oferta a "sold".
 

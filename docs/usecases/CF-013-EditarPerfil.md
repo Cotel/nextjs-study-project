@@ -1,4 +1,4 @@
-# 🌟 CF-013 - Editar Perfil
+## 🌟 CF-013 - Editar Perfil
 
 ## 1. 📝 Descripción  
 Un usuario edita los detalles de su perfil.
@@ -19,7 +19,7 @@ Perfil actualizado.
 ## 5. 🔍 Precondiciones 
 1. El usuario debe ser el propietario del perfil.  
 
-## 6. 🛠 Flujo Principal  
+## 6. 🛠️ Flujo Principal
 1. El sistema presenta un formulario con los campos del perfil para su edición.  
 2. El usuario modifica los campos que desea actualizar.  
 3. El sistema valida el formato de los datos introducidos.  

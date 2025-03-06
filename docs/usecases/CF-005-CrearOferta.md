@@ -1,4 +1,4 @@
-# 🌟 CF-005 - Crear Oferta
+## 🌟 CF-005 - Crear Oferta
 
 ## 1. 📝 Descripción  
 Un vendedor crea una nueva oferta para un producto.
@@ -19,7 +19,7 @@ Oferta creada.
 ## 5. 🔍 Precondiciones 
 1. El usuario debe estar registrado e identificado en el sistema.
 
-## 6. 🛠 Flujo Principal  
+## 6. 🛠️ Flujo Principal 
 1. El sistema presenta un formulario para que el vendedor complete los campos necesarios para crear la oferta.  
 2. El vendedor introduce la información solicitada.  
 3. El sistema valida el formato de los datos introducidos.  
