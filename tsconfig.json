@@ -26,7 +26,8 @@
       "@core/productCategories/*": ["./src/contexts/productCategories/*"],
       "@infra/productCategories/*": ["./src/infra/productCategories/*"],
       "@core/users/*": ["./src/contexts/users/*"],
-      "@infra/users/*": ["./src/infra/users/*"]
+      "@infra/users/*": ["./src/infra/users/*"],
+      "@core/products/*": ["./src/contexts/products/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
