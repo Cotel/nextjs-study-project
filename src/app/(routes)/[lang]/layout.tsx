@@ -1,12 +1,12 @@
 import { Theme } from '@radix-ui/themes'
 import type { Metadata } from 'next'
 import '@radix-ui/themes/styles.css'
-import '../../(styles)/globals.css'
+import '../../_styles/globals.css'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import React from 'react'
-import { routing } from '../../(i18n)/routing'
+import { routing } from '../../_i18n/routing'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,13 +18,13 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode
-  params: { lang: string }
+  params: Promise<{ lang: string }>
 }) {
-  const { lang } = await params
-
   // Ensure that the incoming locale is valid
+  const { lang } = await params
   if (!routing.locales.includes(lang as never)) notFound()
 
+  // Providing all translations to the client
   const translations = await getMessages()
 
   return (
