@@ -2,7 +2,6 @@
 
 import { useCases } from '@infra/di/usecases'
 import { redirect } from 'next/navigation'
-
 export const signUpAction = async (formData: FormData): Promise<void> => {
   const email = formData.get('email') as string
   const password = formData.get('password') as string

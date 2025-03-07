@@ -4,7 +4,11 @@ import { signIn, signOut } from '.'
 
 export class AuthJsService implements AuthService {
   async signInWithCredentials(email: Email, password: string): Promise<void> {
-    await signIn('credentials', { email, password })
+    await signIn('credentials', {
+      email,
+      password,
+      redirect: false, // Prevent automatic redirect
+    })
   }
 
   async signOut(): Promise<void> {
