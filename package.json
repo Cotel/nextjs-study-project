@@ -20,14 +20,19 @@
     ]
   },
   "dependencies": {
+    "@auth/drizzle-adapter": "^1.8.0",
     "@radix-ui/themes": "^3.1.6",
+    "@types/bcryptjs": "^2.4.6",
+    "bcryptjs": "^3.0.2",
     "drizzle-orm": "^0.40.0",
     "next": "15.1.5",
+    "next-auth": "^5.0.0-beta.25",
     "next-intl": "^3.26.3",
     "pg": "^8.13.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sass": "^1.83.4",
+    "server-only": "^0.0.1",
     "ts-money": "^0.4.8"
   },
   "devDependencies": {
