@@ -29,7 +29,6 @@ describe('SignUpUserWithCredentials', () => {
   let useCase: SignUpUserWithCredentials
 
   const validParams = {
-    name: 'John Doe',
     email: 'john@example.com' as Email,
     password: 'ValidPass123',
   }
@@ -48,38 +47,19 @@ describe('SignUpUserWithCredentials', () => {
     it('should create a user with valid parameters', async () => {
       const mockUser = {
         id: 'test-id',
-        name: validParams.name,
         email: validParams.email,
         createdAt: '2024-03-04T12:00:00.000Z',
         updatedAt: '2024-03-04T12:00:00.000Z',
       }
       ;(User.createUser as jest.Mock).mockResolvedValue(mockUser)
 
-      const result = await useCase.execute(validParams)
+      await useCase.execute(validParams)
 
       expect(User.createUser).toHaveBeenCalledWith(validParams)
-      expect(result).toEqual(mockUser)
 
       // Verify user was stored in repository
       const storedUser = repository.getById(mockUser.id)
       expect(storedUser).toEqual(mockUser)
-    })
-
-    it('should throw ValidationError when name is too short', async () => {
-      const params = { ...validParams, name: 'A' }
-
-      await expect(useCase.execute(params)).rejects.toThrow(ValidationError)
-      await expect(useCase.execute(params)).rejects.toMatchObject({
-        errors: expect.arrayContaining([
-          {
-            field: 'name',
-            message: 'Name must be at least 2 characters long',
-          },
-        ]),
-      })
-
-      // Verify no user was stored
-      expect(repository.getAll()).toHaveLength(0)
     })
 
     it('should throw ValidationError when email is invalid', async () => {

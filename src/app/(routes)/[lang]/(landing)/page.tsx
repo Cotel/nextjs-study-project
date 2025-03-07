@@ -1,19 +1,16 @@
+import { auth } from '@infra/auth'
 import { Box, Container, Flex, Heading, Text } from '@radix-ui/themes'
-import { SignInForm } from '@ui/components/organisms/SignInForm/SignInForm'
 import { getTranslations } from 'next-intl/server'
-import { GenerateFakeUserButton } from './GenerateFakeUserButton'
 
 const LandingPage = async () => {
+  const session = await auth()
+
   return (
     <Container size="2" asChild>
       <Flex>
         <Callout />
 
-        <Flex>
-          <SignInForm />
-        </Flex>
-
-        <GenerateFakeUserButton />
+        {!!session && <div>Logged in as {session?.user?.email}</div>}
       </Flex>
     </Container>
   )

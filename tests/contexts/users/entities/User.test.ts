@@ -33,7 +33,6 @@ describe('User', () => {
 
       expect(user).toEqual({
         id: 'mocked-uuid',
-        name: 'John Doe',
         email: 'john@example.com',
         createdAt: '2024-03-04T12:00:00.000Z',
         updatedAt: '2024-03-04T12:00:00.000Z',
@@ -63,7 +62,6 @@ describe('User', () => {
 
       expect(user).toEqual({
         id: 'mocked-uuid',
-        name: 'John Doe',
         email: 'john@example.com',
         createdAt: '2024-03-04T12:00:00.000Z',
         updatedAt: '2024-03-04T12:00:00.000Z',

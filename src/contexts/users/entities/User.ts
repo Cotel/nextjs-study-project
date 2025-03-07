@@ -8,7 +8,6 @@ import { UserPassword } from './UserPassword'
 
 export type User = {
   id: Uuid
-  name: string
   email: Email
   createdAt: UnixTimestamp
   updatedAt: UnixTimestamp
@@ -16,11 +15,9 @@ export type User = {
 }
 
 const createUser = async ({
-  name,
   email,
   password,
 }: {
-  name: string
   email: string
   password?: string
 }) => {
@@ -29,7 +26,6 @@ const createUser = async ({
 
   const user: User = {
     id,
-    name,
     email,
     createdAt: now,
     updatedAt: now,
