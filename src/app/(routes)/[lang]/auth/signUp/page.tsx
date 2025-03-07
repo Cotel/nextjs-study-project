@@ -1,4 +1,4 @@
-import { Container, Flex, Section } from '@radix-ui/themes'
+import { Container } from '@radix-ui/themes'
 import { SignUpForm } from '@ui/components/users/organisms/SignUpForm/SignUpForm'
 
 const SignUpPage = () => {

@@ -1,6 +1,5 @@
 import { Email } from '@core/shared/entities/Email'
 import { FindUserByEmail } from '@core/users/application/usecases/FindUserByEmail'
-import { User } from '@core/users/entities/User'
 import { InMemoryUserRepository } from '@infra/users/InMemoryUserRepository'
 
 describe('FindUserByEmail', () => {

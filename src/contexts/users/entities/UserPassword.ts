@@ -3,10 +3,7 @@ import {
   getCurrentUnixTimestamp,
 } from '@core/shared/entities/UnixTimestamp'
 import { Uuid } from '@core/shared/entities/Uuid'
-import {
-  ValidationError,
-  ValidationErrorDetail,
-} from '@core/shared/errors/ValidationError'
+import { ValidationErrorDetail } from '@core/shared/errors/ValidationError'
 import bcrypt from 'bcryptjs'
 
 export type UserPassword = {

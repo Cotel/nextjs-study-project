@@ -1,5 +1,3 @@
-import { DrizzleUserAccountRepository } from '@infra/users/DrizzleUserAccountRepository'
-import { DrizzleUserRepository } from '@infra/users/DrizzleUserRepository'
 import { InMemoryUserAccountRepository } from '@infra/users/InMemoryUserAccountRepository'
 import { InMemoryUserRepository } from '@infra/users/InMemoryUserRepository'
 
