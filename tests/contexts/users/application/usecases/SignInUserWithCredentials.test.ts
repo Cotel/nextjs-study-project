@@ -16,6 +16,7 @@ describe('SignInUserWithCredentials', () => {
     authService = {
       signInWithCredentials: jest.fn().mockResolvedValue(undefined),
       signOut: jest.fn().mockResolvedValue(undefined),
+      getCurrentUserId: jest.fn().mockResolvedValue(undefined),
     }
     useCase = new SignInUserWithCredentials(authService)
   })

@@ -1,5 +1,6 @@
 'use server'
 
+import { services } from '@infra/di/services'
 import { useCases } from '@infra/di/usecases'
 import { redirect } from 'next/navigation'
 
@@ -16,6 +17,12 @@ export const signUpAction = async (formData: FormData): Promise<void> => {
     email,
     password,
   })
+
+  const userId = await services.auth.getCurrentUserId()
+
+  if (userId) {
+    await useCases.createProfile.execute(userId)
+  }
 
   redirect('/')
 }

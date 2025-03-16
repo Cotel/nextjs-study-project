@@ -27,6 +27,20 @@ export const userPasswordTable = pgTable('user_passwords', {
   updatedAt: timestamp().notNull().defaultNow(),
 })
 
+export const profileTable = pgTable('profiles', {
+  userId: text()
+    .primaryKey()
+    .references(() => userTable.id, { onDelete: 'cascade' }),
+  avatarUrl: text().notNull(),
+  fullName: text().notNull(),
+  userName: text().notNull(),
+  biography: text(),
+  score: integer().notNull().default(0),
+  sales: integer().notNull().default(0),
+  createdAt: timestamp().notNull().defaultNow(),
+  updatedAt: timestamp().notNull().defaultNow(),
+})
+
 export const userAccountTable = pgTable(
   'user_accounts',
   {

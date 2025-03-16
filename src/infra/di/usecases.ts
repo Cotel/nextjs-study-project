@@ -1,3 +1,5 @@
+import { CreateProfile } from '@core/profiles/application/usecases/CreateProfile'
+import { UpdateProfile } from '@core/profiles/application/usecases/UpdateProfile'
 import { FindUserByEmail } from '@core/users/application/usecases/FindUserByEmail'
 import { SignInUserWithCredentials } from '@core/users/application/usecases/SignInUserWithCredentials'
 import { SignOutUser } from '@core/users/application/usecases/SignOutUser'
@@ -10,4 +12,6 @@ export const useCases = {
   findUserByEmail: new FindUserByEmail(repositories.user),
   signInUserWithCredentials: new SignInUserWithCredentials(services.auth),
   signOutUser: new SignOutUser(services.auth),
+  createProfile: new CreateProfile(repositories.profile),
+  updateProfile: new UpdateProfile(repositories.profile),
 } as const
