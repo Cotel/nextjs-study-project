@@ -8,8 +8,3 @@ export interface UserRepository {
   findById(id: Uuid): Promise<User | null>
   findByEmail(email: Email): Promise<User | null>
 }
-
-export type CreateUserParams = {
-  name: string
-  email: string
-}

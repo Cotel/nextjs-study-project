@@ -61,3 +61,23 @@ export const productCategoryTable = pgTable('product_categories', {
     .$defaultFn(() => generateUuid()),
   name: text().notNull(),
 })
+
+export const productTable = pgTable('products', {
+  id: text()
+    .primaryKey()
+    .$defaultFn(() => generateUuid()),
+
+  imageUrl: text().notNull(),
+  priceAmount: integer().notNull(),
+  priceCurrency: text().notNull(),
+  title: text().notNull(),
+  details: text().notNull(),
+  status: text().notNull(),
+  productCategoryId: text()
+    .notNull()
+    .references(() => productCategoryTable.id, { onDelete: 'cascade' }),
+  sellingStatus: text().notNull(),
+  sellerId: text()
+    .notNull()
+    .references(() => userTable.id, { onDelete: 'no action' }),
+})
