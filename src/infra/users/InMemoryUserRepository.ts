@@ -1,3 +1,5 @@
+import { Email } from '@core/shared/entities/Email'
+import { Uuid } from '@core/shared/entities/Uuid'
 import { UserRepository } from '@core/users/application/interfaces/UserRepository'
 import { User } from '@core/users/entities/User'
 
@@ -23,6 +25,24 @@ export class InMemoryUserRepository implements UserRepository {
 
     this.memory[user.id] = { ...user }
     return this.memory[user.id]
+  }
+
+  async update(user: User): Promise<User> {
+    if (!this.memory[user.id]) {
+      throw new Error(`User with id ${user.id} not found`)
+    }
+
+    this.memory[user.id] = { ...user }
+    return this.memory[user.id]
+  }
+
+  async findById(id: Uuid): Promise<User | null> {
+    return this.memory[id] || null
+  }
+
+  async findByEmail(email: Email): Promise<User | null> {
+    const user = Object.values(this.memory).find((user) => user.email === email)
+    return user || null
   }
 
   // Helper methods for testing

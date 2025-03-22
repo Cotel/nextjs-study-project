@@ -1,61 +1,22 @@
-import { DrizzleAdapter } from '@auth/drizzle-adapter'
-import { UserPassword } from '@core/users/entities/UserPassword'
-import { eq } from 'drizzle-orm'
+import { Email } from '@core/shared/entities/Email'
+import { AuthService } from '@core/users/application/interfaces/AuthService'
 import NextAuth from 'next-auth'
-import Credentials from 'next-auth/providers/credentials'
-import { db } from '../drizzle/db'
-import { userPasswordTable, userTable } from '../drizzle/schema'
+import { authConfig } from './config'
 
-export const { handlers, signIn, signOut, auth } = NextAuth({
-  adapter: DrizzleAdapter(db),
-  providers: [
-    Credentials({
-      credentials: {
-        email: {},
-        password: {},
-      },
-      async authorize(credentials) {
-        const { email, password } = credentials
+const { handlers, signIn, signOut, auth } = NextAuth(authConfig)
 
-        // Find user and their password
-        const [user] = await db
-          .select({
-            user: userTable,
-            passwordHash: userPasswordTable.hash,
-          })
-          .from(userTable)
-          .leftJoin(
-            userPasswordTable,
-            eq(userTable.id, userPasswordTable.userId),
-          )
-          .where(eq(userTable.email, email as string))
+class AuthJsService implements AuthService {
+  async signInWithCredentials(email: Email, password: string): Promise<void> {
+    await signIn('credentials', {
+      email,
+      password,
+      redirect: false, // Prevent automatic redirect
+    })
+  }
 
-        if (!user?.passwordHash || !user.user) {
-          return null
-        }
+  async signOut(): Promise<void> {
+    await signOut()
+  }
+}
 
-        // Validate password using domain entity
-        const isValid = await UserPassword.checkPassword({
-          hash: user.passwordHash,
-          password: password as string,
-        })
-
-        if (!isValid) {
-          return null
-        }
-
-        return {
-          id: user.user.id,
-          name: user.user.name,
-          email: user.user.email,
-        }
-      },
-    }),
-  ],
-  pages: {
-    signIn: '/auth/signin',
-  },
-  session: {
-    strategy: 'jwt',
-  },
-})
+export { handlers, auth, AuthJsService }

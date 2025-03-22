@@ -13,7 +13,6 @@ export const userTable = pgTable('users', {
   id: text()
     .primaryKey()
     .$defaultFn(() => generateUuid()),
-  name: text().notNull(),
   email: text().notNull().unique(),
   createdAt: timestamp().notNull().defaultNow(),
   updatedAt: timestamp().notNull().defaultNow(),
