@@ -97,9 +97,9 @@ const config: Config = {
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
     '^@ui/components/(.*)$': '<rootDir>/src/app/_components/$1',
-    '^@core/shared/(.*)$': '<rootDir>/src/contexts/shared/$1',
-    '^@core/productCategories/(.*)$':
-      '<rootDir>/src/contexts/productCategories/$1',
+    '^@ui/actions/(.*)$': '<rootDir>/src/app/_actions/$1',
+    '^@core/(.*)$': '<rootDir>/src/contexts/$1',
+    '^@infra/(.*)$': '<rootDir>/src/infra/$1',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -147,7 +147,7 @@ const config: Config = {
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  // setupFilesAfterEnv: [],
+  setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,

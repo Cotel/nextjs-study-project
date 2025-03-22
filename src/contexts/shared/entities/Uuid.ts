@@ -1,7 +1,12 @@
-import { randomUUID } from 'node:crypto'
-
 export type Uuid = string
 
-export const generateUuid = (): Uuid => {
-  return randomUUID()
+let uuidGenerator = () => crypto.randomUUID()
+
+export function generateUuid(): Uuid {
+  return uuidGenerator()
+}
+
+// Only for testing purposes
+export function setUuidGenerator(generator: () => string) {
+  uuidGenerator = generator
 }

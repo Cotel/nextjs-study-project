@@ -1,5 +1,4 @@
 import { GetProductCategories } from '@core/productCategories/application/useCases/GetProductCategories'
-import { use } from 'react'
 import { InMemoryProductCategoryRepository } from '../../../../../src/infra/productCategories/InMemoryProductCategoryRepository'
 
 describe('Use Case - Get Product Categories', () => {

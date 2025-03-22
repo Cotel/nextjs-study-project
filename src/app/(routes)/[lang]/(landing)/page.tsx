@@ -1,25 +1,32 @@
-import { Box, Container, Flex, Heading, Text } from '@radix-ui/themes'
-import { useTranslations } from 'next-intl'
+import { auth } from '@infra/auth'
+import { Box, Button, Container, Flex, Heading, Text } from '@radix-ui/themes'
+import { signOut } from '@ui/actions/auth'
 import { getTranslations } from 'next-intl/server'
 
 const LandingPage = async () => {
-  const t = await getTranslations('landing')
+  const session = await auth()
 
   return (
     <Container size="2" asChild>
       <Flex>
         <Callout />
 
-        <Flex>
-          <Heading size="5">{t('popularListings')}</Heading>
-        </Flex>
+        {!!session && (
+          <Flex direction="row" justify="between" align="center">
+            <div>Logged in as {session?.user?.email}</div>
+
+            <Button onClick={signOut} color="red">
+              Sign out
+            </Button>
+          </Flex>
+        )}
       </Flex>
     </Container>
   )
 }
 
-const Callout = () => {
-  const t = useTranslations('landing')
+const Callout = async () => {
+  const t = await getTranslations('landing')
 
   return (
     <Box
