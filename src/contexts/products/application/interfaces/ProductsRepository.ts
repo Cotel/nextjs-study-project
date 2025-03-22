@@ -3,5 +3,5 @@ import { Uuid } from '@core/shared/entities/Uuid'
 
 export interface ProductsRepository {
   findAll(): Promise<Product[]>
-  findById(id: Uuid): Promise<Product|undefined>
+  findById(id: Uuid): Promise<Product | undefined>
 }
