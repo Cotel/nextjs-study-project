@@ -31,6 +31,8 @@ describe('Use Case - Get Products', () => {
           sellerId: '223e4567-e89b-12d3-a456-426614174002',
         },
       ],
+
+      findById: async (): Promise<Product | undefined> => undefined,
     }
     const useCase = new GetProducts(mockProductsRepository)
 

@@ -1,0 +1,15 @@
+.button{
+  padding:1rem;
+  border: 2px solid black;
+  border-radius:2rem;
+
+  &--solid {
+    color:white;
+    background-color: darkviolet;
+  }
+
+  &--outline {
+    color:black;
+    background-color: transparent;
+  }
+}

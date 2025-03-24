@@ -1,14 +1,15 @@
-import { Flex, Link } from '@radix-ui/themes'
+import { Button } from '../../atoms/Button/Button'
 import styles from './NavBar.module.scss'
 
 export const NavBar = () => {
   return (
-    <Flex className={styles['navBar']} asChild p="4">
-      <nav>
-        <Link href="/" underline="none" weight="bold" size="5">
-          Enriconsolas
-        </Link>
-      </nav>
-    </Flex>
+    <nav className={styles['nav-bar']}>
+      <h1>Enriconsolas</h1>
+
+      <div className={styles['nav-bar__right-actions']}>
+        <Button>Sign In</Button>
+        <Button variant="outline">Sign Up</Button>
+      </div>
+    </nav>
   )
 }

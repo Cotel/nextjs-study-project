@@ -1,10 +1,7 @@
 import { ProductsRepository } from '@core/products/application/interfaces/ProductsRepository'
 import { Product } from '@core/products/entities/Product'
 import { checkProductSellingStatus } from '@core/products/entities/ProductSellingStatus'
-import {
-  ProductStatus,
-  checkProductStatus,
-} from '@core/products/entities/ProductStatus'
+import { checkProductStatus } from '@core/products/entities/ProductStatus'
 import { db } from '@infra/drizzle/db'
 import { productTable } from '@infra/drizzle/schema'
 import { Money } from 'ts-money'
@@ -35,5 +32,9 @@ export class DrizzleProductsRepository implements ProductsRepository {
         sellerId: dbProduct.sellerId,
       }
     })
+  }
+
+  findById(): Promise<Product | undefined> {
+    throw new Error('Method not implemented')
   }
 }

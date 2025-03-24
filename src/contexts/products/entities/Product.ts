@@ -1,6 +1,6 @@
 import { Url } from '@core/shared/entities/Url'
 import { Uuid } from '@core/shared/entities/Uuid'
-import { Currencies, Money } from 'ts-money'
+import { Money } from 'ts-money'
 import { ProductSellingStatus } from './ProductSellingStatus'
 import { ProductStatus } from './ProductStatus'
 
