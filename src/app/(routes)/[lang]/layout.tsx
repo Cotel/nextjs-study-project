@@ -30,16 +30,9 @@ export default async function RootLayout({
   return (
     <html lang={lang}>
       <body>
-        <Theme
-          accentColor="jade"
-          radius="large"
-          grayColor="slate"
-          scaling="110%"
-        >
           <NextIntlClientProvider messages={translations}>
             {children}
           </NextIntlClientProvider>
-        </Theme>
       </body>
     </html>
   )

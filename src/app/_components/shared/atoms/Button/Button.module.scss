@@ -1,15 +1,17 @@
-.button{
-  padding:1rem;
-  border: 2px solid black;
-  border-radius:2rem;
+@use '../../../../_styles/palette';
+
+.button {
+  padding: 1rem;  
+  border: 2px solid #ff5b4d; 
+  border-radius: 2rem;
 
   &--solid {
-    color:white;
-    background-color: darkviolet;
+    color: white;
+    background-color: #ff5b4d; 
   }
 
   &--outline {
-    color:black;
-    background-color: transparent;
+    color: black;
+    background-color: transparent; 
   }
 }

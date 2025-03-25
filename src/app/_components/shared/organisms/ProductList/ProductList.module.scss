@@ -1,0 +1,8 @@
+.product-list{
+  margin: 4rem auto;
+  min-height: 100rem; //Para visualizarse durante el desarrollo
+  max-width: 70rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:2rem;
+}
