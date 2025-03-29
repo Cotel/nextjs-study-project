@@ -3,7 +3,7 @@ import { classNames } from '../../../../_styles/classNames'
 import styles from './Button.module.scss'
 
 export interface ButtonProps {
-  variant?: 'solid' | 'outline'
+  variant?: 'solid' | 'transparent' | 'outline'
   children: ReactNode
 }
 

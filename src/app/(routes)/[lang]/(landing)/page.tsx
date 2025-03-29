@@ -1,4 +1,4 @@
-import { ProductGenreSelector } from '@ui/components/shared/molecules/ProductGenreSelector/ProductGenreSelector'
+import { ProductCategorySelector } from '@ui/components/shared/molecules/ProductCategorySelector/ProductCategorySelector'
 import { SearchBar } from '@ui/components/shared/molecules/SearchBar/SearchBar'
 import { Footer } from '@ui/components/shared/organisms/Footer/Footer'
 import { Hero } from '@ui/components/shared/organisms/Hero/Hero'
@@ -9,10 +9,10 @@ const LandingPage = async () => {
   return (
     <>
       <NavBar />  
-      <h1>Buy, Sell, Play</h1>
-      <Hero />  
+      <h1>Buy, Sell, Play!!!</h1>
+      <Hero/>  
       <SearchBar/>
-      <ProductGenreSelector/>
+      <ProductCategorySelector/>
       <ProductList/>
       <Footer />
     </>
