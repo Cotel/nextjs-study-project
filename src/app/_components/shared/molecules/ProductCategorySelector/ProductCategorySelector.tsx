@@ -1,38 +1,41 @@
-import React, { useEffect, useState } from 'react';
-import { Button } from '../../atoms/Button/Button';
-import styles from './ProductCategorySelector.module.scss';
-import { ProductCategory } from '@core/productCategories/entities/ProductCategory';
-import { getProductCategories } from '../../../../_queries/productsCategories';
+import { ProductCategory } from '@core/productCategories/entities/ProductCategory'
+import { Flex, RadioCards } from '@radix-ui/themes'
+import { useEffect, useState } from 'react'
+import { getProductCategories } from '../../../../_queries/productsCategories'
+
+export const ALL_PRODUCT_CATEGORIES = 'ALL'
 
 interface ProductCategorySelectorProps {
-  setSelectedCategory: (categoryId: string | null) => void; 
+  setSelectedCategory: (
+    categoryId: string | typeof ALL_PRODUCT_CATEGORIES,
+  ) => void
 }
 
-export const ProductCategorySelector = ({ setSelectedCategory }: ProductCategorySelectorProps) => {
-  const [categories, setCategories] = useState<ProductCategory[]>([]);
-  const [selectedCategory, setSelectedCategoryLocal] = useState<string | null>(null);
+export const ProductCategorySelector = ({
+  setSelectedCategory,
+}: ProductCategorySelectorProps) => {
+  const [categories, setCategories] = useState<ProductCategory[]>([])
 
   useEffect(() => {
-    getProductCategories().then(result => setCategories(result));
-  }, []);
-
-  // Manejar el clic en una categoría
-  const handleCategoryClick = (categoryId: string) => {
-    setSelectedCategoryLocal(categoryId);  // Actualizar el estado local de la categoría seleccionada
-    setSelectedCategory(categoryId);       // Actualizar el estado en el componente padre
-  };
+    getProductCategories().then((result) => setCategories(result))
+  }, [])
 
   return (
-    <div className={styles['product-category-selector']}>
-      {categories.map((category) => (
-        <Button
-          key={category.id}
-          variant={category.id === selectedCategory ? 'solid' : 'outline'} // Cambiar el estilo según la categoría seleccionada
-          onClick={() => handleCategoryClick(category.id)}
-        >
-          {category.name}
-        </Button>
-      ))}
-    </div>
-  );
-};
+    <Flex direction="row">
+      <RadioCards.Root
+        onValueChange={setSelectedCategory}
+        defaultValue={ALL_PRODUCT_CATEGORIES}
+        columns={{ initial: '3' }}
+        gap="2"
+      >
+        <RadioCards.Item value={ALL_PRODUCT_CATEGORIES}>All</RadioCards.Item>
+
+        {categories.map((category) => (
+          <RadioCards.Item key={category.id} value={category.id}>
+            {category.name}
+          </RadioCards.Item>
+        ))}
+      </RadioCards.Root>
+    </Flex>
+  )
+}

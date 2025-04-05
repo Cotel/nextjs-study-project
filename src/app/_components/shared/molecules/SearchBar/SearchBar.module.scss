@@ -1,11 +1,10 @@
-.search-bar{
+.search-bar {
   display: flex;
   align-items: center;
 
-  &__input-bar{
-  padding: 1rem;
-  margin: 3rem auto;
-  border: 1px solid grey;
-  border-radius: 0.8rem;
+  &__input-bar {
+    padding: 1rem;
+    border: 1px solid grey;
+    border-radius: 0.8rem;
   }
 }

@@ -1,41 +1,51 @@
-"use client";
+'use client'
 
-import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-import { ProductCategorySelector } from "../../molecules/ProductCategorySelector/ProductCategorySelector";
-import { SearchBar } from "../../molecules/SearchBar/SearchBar";
-import { ProductList } from "../ProductList/ProductList";
-import { InMemoryProductsRepository } from "@infra/products/InMemoryProductsRepository";
-import { Product } from "@core/products/entities/Product";
+import { Product } from '@core/products/entities/Product'
+import { ProductCriteria } from '@core/products/entities/ProductsCriteria'
+import { Uuid } from '@core/shared/entities/Uuid'
+import { Flex } from '@radix-ui/themes'
+import { useEffect, useState } from 'react'
+import { getProducts } from '../../../../_queries/products'
+import {
+  ALL_PRODUCT_CATEGORIES,
+  ProductCategorySelector,
+} from '../../molecules/ProductCategorySelector/ProductCategorySelector'
+import { SearchBar } from '../../molecules/SearchBar/SearchBar'
+import { ProductList } from '../ProductList/ProductList'
 
 export const ProductListContainer = () => {
-  const [formState, setFormState] = useState("");
-  const [products, setProducts] = useState<Product[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [criteria, setCriteria] = useState<ProductCriteria>({})
+  const [products, setProducts] = useState<Product[]>([])
+
+  const onTitleInputChanged = (input: string) => {
+    setCriteria((prev) => ({
+      ...prev,
+      title: input,
+    }))
+  }
+
+  const onCategoryChanged = (
+    categoryId: Uuid | typeof ALL_PRODUCT_CATEGORIES,
+  ) => {
+    setCriteria((prev) => ({
+      ...prev,
+      categoryId:
+        categoryId === ALL_PRODUCT_CATEGORIES ? undefined : categoryId,
+    }))
+  }
 
   useEffect(() => {
-    const repository = new InMemoryProductsRepository();
-    repository.findAll().then((allProducts) => {
-      let filteredProducts = allProducts;
-
-      if (selectedCategory) {
-        filteredProducts = filteredProducts.filter(product => product.category === selectedCategory);
-      }
-
-      if (searchQuery) {
-        filteredProducts = filteredProducts.filter(product => product.title.toLowerCase().includes(searchQuery.toLowerCase()));
-      }
-
-      setProducts(filteredProducts);
-    });
-  }, [selectedCategory, searchQuery]); // Dependencias: se vuelve a ejecutar cuando cambia la categoría o la búsqueda
+    getProducts(criteria).then((result) => setProducts(result))
+  }, [criteria])
 
   return (
-    <div>
-      <SearchBar setSearchQuery={setSearchQuery} />
-      <ProductCategorySelector setSelectedCategory={setSelectedCategory} />
+    <Flex direction="column" gap="4">
+      <Flex direction="column" gap="2">
+        <SearchBar setSearchQuery={onTitleInputChanged} />
+        <ProductCategorySelector setSelectedCategory={onCategoryChanged} />
+      </Flex>
+
       <ProductList products={products} />
-    </div>
-  );
-};
+    </Flex>
+  )
+}

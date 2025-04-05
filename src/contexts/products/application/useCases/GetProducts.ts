@@ -1,4 +1,5 @@
 import { Product } from '@core/products/entities/Product'
+import { ProductCriteria } from '@core/products/entities/ProductsCriteria'
 import { ProductsRepository } from '../interfaces/ProductsRepository'
 
 export class GetProducts {
@@ -8,7 +9,7 @@ export class GetProducts {
     this.repository = repository
   }
 
-  execute(): Promise<Product[]> {
-    return this.repository.findAll()
+  execute(criteria?: ProductCriteria): Promise<Product[]> {
+    return this.repository.findAll(criteria)
   }
 }

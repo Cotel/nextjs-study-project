@@ -30,9 +30,11 @@ export default async function RootLayout({
   return (
     <html lang={lang}>
       <body>
+        <Theme>
           <NextIntlClientProvider messages={translations}>
             {children}
           </NextIntlClientProvider>
+        </Theme>
       </body>
     </html>
   )
