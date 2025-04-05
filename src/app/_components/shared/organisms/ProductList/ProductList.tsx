@@ -1,9 +1,8 @@
 'use client'
 
+import { Product } from '@core/products/entities/Product'
 import { ProductListItem } from '../ProductListItem/ProductListItem'
 import styles from './ProductList.module.scss'
-import { Product } from '@core/products/entities/Product'
-
 
 export const ProductList = ({ products }: { products: Product[] }) => {
   return (
@@ -11,11 +10,12 @@ export const ProductList = ({ products }: { products: Product[] }) => {
       {products.map((product) => (
         <ProductListItem
           key={product.id}
+          productId={product.id}
           imageUrl={product.imageUrl}
-          price={product.price.toString()} 
+          price={product.price.toString()}
           title={product.title}
         />
       ))}
     </div>
-  );
+  )
 }
