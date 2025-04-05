@@ -1,13 +1,13 @@
 import { ProductsRepository } from "@core/products/application/interfaces/ProductsRepository";
 import { Product } from "@core/products/entities/Product";
-import { generateUuid, Uuid } from "@core/shared/entities/Uuid";
-import { Money, Currencies } from "ts-money";
+import { Uuid } from "@core/shared/entities/Uuid";
+import { Money, Currencies } from 'ts-money';
 
 const DEFAULT_MEMORY: Record<string, Product> = {
   bof1: {
     id: '123e4567-e89b-12d3-a456-426614174000',
     imageUrl: 'locales/games/BOF.webp',
-    price: new Money(3995, Currencies.USD),
+    price: '9',
     title: 'Breath Of Fire',
     status: 'new',
     details: 'Product details 1',
@@ -19,7 +19,7 @@ const DEFAULT_MEMORY: Record<string, Product> = {
   bof2: {
     id: '223e4567-e89b-12d3-a456-426614174000',
     imageUrl: 'locales/games/BOF2.webp',
-    price: new Money(3995, Currencies.USD),
+    price: '9',
     title: 'Breath Of Fire 2',
     status: 'new',
     details: 'Product details 2',
@@ -31,7 +31,7 @@ const DEFAULT_MEMORY: Record<string, Product> = {
   ffta: {
     id: '323e4567-e89b-12d3-a456-426614174000',
     imageUrl: 'locales/games/FFTA.webp',
-    price: new Money(3995, Currencies.USD),
+    price: '9',
     title: 'Final Fantasy Tactics Advance',
     status: 'new',
     details: 'Product details 3',
@@ -43,7 +43,7 @@ const DEFAULT_MEMORY: Record<string, Product> = {
   pkmnr: {
     id: '423e4567-e89b-12d3-a456-426614174000',
     imageUrl: 'locales/games/PR.webp',
-    price: new Money(2995, Currencies.USD),
+    price: '9',
     title: 'Pokemon Ruby',
     status: 'new',
     details: 'Product details 4',
@@ -55,7 +55,7 @@ const DEFAULT_MEMORY: Record<string, Product> = {
   tloztmc: {
     id: '523e4567-e89b-12d3-a456-426614174000',
     imageUrl: 'locales/games/TLOZTMC.webp',
-    price: new Money(3995, Currencies.USD),
+    price: '9',
     title: 'The Legend Of Zelda The Minish Cap',
     status: 'new',
     details: 'Product details 5',
@@ -67,7 +67,7 @@ const DEFAULT_MEMORY: Record<string, Product> = {
   gbaspBLue: {
     id: '63e4567-e89b-12d3-a456-426614174000',
     imageUrl: 'locales/consoles/gbaspBlue.webp',
-    price: new Money(8995, Currencies.USD),
+    price: '9',
     title: 'Gameboy Advance SP Blue Cobalt',
     status: 'new',
     details: 'Product details 6',
@@ -79,7 +79,7 @@ const DEFAULT_MEMORY: Record<string, Product> = {
   gbaspZelda: {
     id: '73e4567-e89b-12d3-a456-426614174000',
     imageUrl: 'locales/consoles/gbaspZelda.webp',
-    price: new Money(49995, Currencies.USD),
+    price: '9',
     title: 'Gameboy Advance SP Zelda Edition',
     status: 'new',
     details: 'Product details 7',
@@ -91,7 +91,7 @@ const DEFAULT_MEMORY: Record<string, Product> = {
   ndsZelda: {
     id: '83e4567-e89b-12d3-a456-426614174000',
     imageUrl: 'locales/consoles/ndsZelda.webp',
-    price: new Money(19995, Currencies.USD),
+    price: '9',
     title: 'Nintendo DS Zelda Edition',
     status: 'new',
     details: 'Product details 8',
@@ -103,7 +103,7 @@ const DEFAULT_MEMORY: Record<string, Product> = {
   n3dsxlMario: {
     id: '923e4567-e89b-12d3-a456-426614174000',
     imageUrl: 'locales/Consoles/n3dsxlMario.webp',
-    price: new Money(24995, Currencies.USD),
+    price: '9',
     title: 'Nintendo 3DS XL Mario',
     status: 'new',
     details: 'Product details 9',
@@ -115,7 +115,7 @@ const DEFAULT_MEMORY: Record<string, Product> = {
   n3dsXerneas: {
     id: '103e4567-e89b-12d3-a456-426614174000',
     imageUrl: 'locales/consoles/n3dsXerneas.webp',
-    price: new Money(29995, Currencies.USD),
+    price: '9',
     title: 'Nintendo 3DS Xerneas Edition',
     status: 'new',
     details: 'Product details 10',

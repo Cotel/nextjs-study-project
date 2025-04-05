@@ -1,28 +1,38 @@
-'use client'
-import React, { useEffect, useState } from 'react'
-import { Button } from '../../atoms/Button/Button'
-import styles from './ProductCategorySelector.module.scss'
-import { ProductCategory } from '@core/productCategories/entities/ProductCategory'
-import { InMemoryProductCategoryRepository } from '@infra/productCategories/InMemoryProductCategoryRepository'
+import React, { useEffect, useState } from 'react';
+import { Button } from '../../atoms/Button/Button';
+import styles from './ProductCategorySelector.module.scss';
+import { ProductCategory } from '@core/productCategories/entities/ProductCategory';
+import { getProductCategories } from '../../../../_queries/productsCategories';
 
-export const ProductCategorySelector = () => {
-  const [categories, setCategories] = useState<ProductCategory[]>([])
+interface ProductCategorySelectorProps {
+  setSelectedCategory: (categoryId: string | null) => void; 
+}
+
+export const ProductCategorySelector = ({ setSelectedCategory }: ProductCategorySelectorProps) => {
+  const [categories, setCategories] = useState<ProductCategory[]>([]);
+  const [selectedCategory, setSelectedCategoryLocal] = useState<string | null>(null);
 
   useEffect(() => {
-    const repository = new InMemoryProductCategoryRepository()
+    getProductCategories().then(result => setCategories(result));
+  }, []);
 
-    repository.findAll().then((categories) => {
-      setCategories(categories)
-    })
-  }, [])
+  // Manejar el clic en una categoría
+  const handleCategoryClick = (categoryId: string) => {
+    setSelectedCategoryLocal(categoryId);  // Actualizar el estado local de la categoría seleccionada
+    setSelectedCategory(categoryId);       // Actualizar el estado en el componente padre
+  };
 
   return (
     <div className={styles['product-category-selector']}>
       {categories.map((category) => (
-        <Button key={category.id} variant="outline">
+        <Button
+          key={category.id}
+          variant={category.id === selectedCategory ? 'solid' : 'outline'} // Cambiar el estilo según la categoría seleccionada
+          onClick={() => handleCategoryClick(category.id)}
+        >
           {category.name}
         </Button>
       ))}
     </div>
-  )
-}
+  );
+};

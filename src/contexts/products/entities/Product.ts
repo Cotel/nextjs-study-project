@@ -5,9 +5,11 @@ import { ProductSellingStatus } from './ProductSellingStatus'
 import { ProductStatus } from './ProductStatus'
 
 export type Product = {
+  name: any
+  category: any
   id: Uuid
   imageUrl: Url
-  price: Money
+  price: string
   title: string
   status: ProductStatus
   details: string

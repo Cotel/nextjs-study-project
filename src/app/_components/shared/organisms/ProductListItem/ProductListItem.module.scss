@@ -1,7 +1,6 @@
-.product-list-item{
-  height: 40%;
-  width: 40%;
+.product-list-item {
   display: flex;
+  min-width: 10rem;
   flex-direction: column;
   justify-content: space-between;
   border: 1px solid #d2d2d2;
@@ -41,4 +40,18 @@
 
 .product-list-item:hover{
   transform: scale(1.1);
+}
+
+@media (min-width: 1024px) {
+  .product-list-item{
+    min-width: 18rem;
+  }
+  .product-text-price{
+    font-size: 20px;
+  }
+
+  .product-text-name{
+    font-size: 15px;
+  }
+
 }
