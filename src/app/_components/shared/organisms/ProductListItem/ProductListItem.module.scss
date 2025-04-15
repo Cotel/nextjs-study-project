@@ -1,6 +1,6 @@
 .product-list-item {
   display: flex;
-  min-width: 10rem;
+  max-width: 10rem;
   flex-direction: column;
   justify-content: space-between;
   border: 1px solid #d2d2d2;
@@ -44,7 +44,7 @@
 
 @media (min-width: 1024px) {
   .product-list-item{
-    min-width: 18rem;
+    max-width: 15rem;
   }
   .product-text-price{
     font-size: 20px;

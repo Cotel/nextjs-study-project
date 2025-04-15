@@ -1,7 +1,13 @@
 .hero  {
-  min-height: 30rem; //Para visualizarse durante el desarrollo
-  max-width: 60rem;
+  min-height: 25rem; //Para visualizarse durante el desarrollo
+  max-width: 22.5rem;
   margin: 0 auto;
   border-radius: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    max-width: 50rem;
+  }
 }

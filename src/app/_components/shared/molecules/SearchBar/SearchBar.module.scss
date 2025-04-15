@@ -3,8 +3,14 @@
   align-items: center;
 
   &__input-bar {
+    margin: 0 auto;
+    min-width: 20rem;
     padding: 1rem;
     border: 1px solid grey;
     border-radius: 0.8rem;
+
+    @media (min-width: 1024px) {
+      min-width: 48rem;
+    }
   }
 }
