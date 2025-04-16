@@ -5,15 +5,15 @@ import styles from './ProductListItem.module.scss'
 interface ProductListItemProps {
   productId: Uuid
   imageUrl: string
-  price: string
   title: string
+  price: string
 }
 
 export const ProductListItem = ({
   productId,
   imageUrl,
-  price,
   title,
+  price,
 }: ProductListItemProps) => {
   return (
     <Link href={`/products/${productId}`}>
@@ -23,8 +23,9 @@ export const ProductListItem = ({
           style={{ backgroundImage: `url(${imageUrl})` }}
         ></div>
         <div className={styles['product-text']}>
-          <p className={styles['product-text-price']}>{price}</p>
           <p className={styles['product-text-name']}>{title}</p>
+          <p className={styles['product-text-price']}>{price}</p>
+          <div className={styles['categoryIcon']}></div>
         </div>
       </div>
     </Link>

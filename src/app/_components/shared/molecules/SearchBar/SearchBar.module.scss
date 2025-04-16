@@ -4,13 +4,10 @@
 
   &__input-bar {
     margin: 0 auto;
-    min-width: 20rem;
+    margin-top: 2rem;
+    min-width: 40vw;
     padding: 1rem;
     border: 1px solid grey;
     border-radius: 0.8rem;
-
-    @media (min-width: 1024px) {
-      min-width: 48rem;
-    }
   }
 }

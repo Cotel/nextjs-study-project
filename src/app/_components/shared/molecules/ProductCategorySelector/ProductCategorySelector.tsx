@@ -1,7 +1,8 @@
 import { ProductCategory } from '@core/productCategories/entities/ProductCategory'
-import { Flex, RadioCards } from '@radix-ui/themes'
+import { RadioGroup } from '@radix-ui/themes'
 import { useEffect, useState } from 'react'
 import { getProductCategories } from '../../../../_queries/productsCategories'
+import styles from './ProductCategorySelector.module.scss' // Asegúrate de ajustar la ruta
 
 export const ALL_PRODUCT_CATEGORIES = 'ALL'
 
@@ -21,21 +22,18 @@ export const ProductCategorySelector = ({
   }, [])
 
   return (
-    <Flex direction="row">
-      <RadioCards.Root
-        onValueChange={setSelectedCategory}
-        defaultValue={ALL_PRODUCT_CATEGORIES}
-        columns={{ initial: '3' }}
-        gap="2"
-      >
-        <RadioCards.Item value={ALL_PRODUCT_CATEGORIES}>All</RadioCards.Item>
+    <RadioGroup.Root
+      className={styles['radio-group']}
+      onValueChange={setSelectedCategory}
+      defaultValue={ALL_PRODUCT_CATEGORIES}
+    >
+      <RadioGroup.Item value={ALL_PRODUCT_CATEGORIES}>All</RadioGroup.Item>
 
-        {categories.map((category) => (
-          <RadioCards.Item key={category.id} value={category.id}>
-            {category.name}
-          </RadioCards.Item>
-        ))}
-      </RadioCards.Root>
-    </Flex>
+      {categories.map((category) => (
+        <RadioGroup.Item key={category.id} value={category.id}>
+          {category.name}
+        </RadioGroup.Item>
+      ))}
+    </RadioGroup.Root>
   )
 }
