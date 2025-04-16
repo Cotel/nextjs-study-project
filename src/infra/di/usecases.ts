@@ -1,3 +1,4 @@
+import { GetProducts } from '@core/products/application/useCases/GetProducts'
 import { FindUserByEmail } from '@core/users/application/usecases/FindUserByEmail'
 import { SignInUserWithCredentials } from '@core/users/application/usecases/SignInUserWithCredentials'
 import { SignOutUser } from '@core/users/application/usecases/SignOutUser'
@@ -10,4 +11,5 @@ export const useCases = {
   findUserByEmail: new FindUserByEmail(repositories.user),
   signInUserWithCredentials: new SignInUserWithCredentials(services.auth),
   signOutUser: new SignOutUser(services.auth),
+  getProducts: new GetProducts(repositories.products),
 } as const

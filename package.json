@@ -31,6 +31,7 @@
     "pg": "^8.13.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-hook-form": "^7.55.0",
     "sass": "^1.83.4",
     "server-only": "^0.0.1",
     "ts-money": "^0.4.8"

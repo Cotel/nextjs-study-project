@@ -4,19 +4,18 @@ import { generateUuid } from '@core/shared/entities/Uuid'
 
 const DEFAULT_MEMORY: Record<string, ProductCategory> = {
   consoles: {
-    id: generateUuid(),
-    name: 'Consoles',
+    id: '123e4567-e89b-12d3-a456-426614174001',
+    name: 'Games',
   },
 
   videogames: {
-    id: generateUuid(),
-    name: 'Videogames',
+    id: '223e4567-e89b-12d3-a456-426614174001',
+    name: 'Consoles',
   },
+  
 }
 
-export class InMemoryProductCategoryRepository
-  implements ProductCategoryRepository
-{
+export class InMemoryProductCategoryRepository implements ProductCategoryRepository {
   private memory: Record<string, ProductCategory>
 
   constructor(memory: Record<string, ProductCategory> = DEFAULT_MEMORY) {

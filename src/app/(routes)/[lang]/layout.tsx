@@ -2,6 +2,8 @@ import { Theme } from '@radix-ui/themes'
 import type { Metadata } from 'next'
 import '@radix-ui/themes/styles.css'
 import '../../_styles/globals.css'
+import { Footer } from '@ui/components/shared/organisms/Footer/Footer'
+import { NavBar } from '@ui/components/shared/organisms/NavBar/NavBar'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
@@ -30,14 +32,13 @@ export default async function RootLayout({
   return (
     <html lang={lang}>
       <body>
-        <Theme
-          accentColor="jade"
-          radius="large"
-          grayColor="slate"
-          scaling="110%"
-        >
+        <Theme>
           <NextIntlClientProvider messages={translations}>
+            <NavBar />
+
             {children}
+
+            <Footer />
           </NextIntlClientProvider>
         </Theme>
       </body>
