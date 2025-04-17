@@ -1,0 +1,125 @@
+.productCard {
+  max-width: 80vw;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 5rem auto;
+  font-family: Poppins;
+  border: 2px solid rgba(79, 70, 229, 0.2);
+  animation: fadeIn 2s forwards;
+}
+
+.productCardHeader {
+  background: linear-gradient(to left, #4f46e5, #7e22ce);
+  padding: 16px;
+  color: white;
+}
+
+.productCardTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.productCardContent {
+  display: flex;
+  flex-direction: column;
+  padding:1rem;
+}
+
+.productCardImageContainer {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.productCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.productCardPrice {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.productCardStatus,
+.productCardDetails {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+.productCardLabel {
+  font-weight: 600;
+  color: #111827;
+}
+
+.productCardContent {
+  gap: 0.8rem;
+}
+
+.productCardDetails p {
+  margin: 0;
+  
+}
+
+.productCardCta {
+  background: linear-gradient(to left, #4f46e5, #7e22ce);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.productCardCta:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.productCardCta:active {
+  transform: translateY(0);
+}
+
+.productImg{ 
+  aspect-ratio: 1 / 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #4b5563;
+}
+
+.productCardActions{
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #eef2ff;
+  border-radius: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .productCard {
+    width: 25vw;
+  }
+  
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

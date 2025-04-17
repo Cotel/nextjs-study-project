@@ -18,7 +18,7 @@ export const ProductListContainer = () => {
   const [products, setProducts] = useState<Product[]>([])
 
   const onTitleInputChanged = (input: string) => {
-    setCriteria((prev) => ({
+    setCriteria((prev) => ({ 
       ...prev,
       title: input,
     }))
