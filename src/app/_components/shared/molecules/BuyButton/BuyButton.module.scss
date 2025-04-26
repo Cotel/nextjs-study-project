@@ -1,0 +1,20 @@
+.buy-button{
+  background: linear-gradient(to left, #4f46e5, #7e22ce);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.buy-button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.buy-button:active {
+  transform: translateY(0);
+}

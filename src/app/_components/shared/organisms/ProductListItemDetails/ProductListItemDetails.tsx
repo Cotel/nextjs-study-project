@@ -1,7 +1,8 @@
-// components/ProductListItemDetails.tsx
+'use client'
+
 import { Uuid } from '@core/shared/entities/Uuid'
-import { Link } from '../../../../_i18n/navigation'
 import styles from './ProductListItemDetails.module.scss'
+import BuyButton from '../../molecules/BuyButton/BuyButton'
 
 interface ProductListItemDetailsProps {
   productId: Uuid
@@ -20,14 +21,16 @@ export default function ProductListItemDetails({
   status,
   details,
 }: ProductListItemDetailsProps) {
+  const fixedImageUrl = imageUrl.startsWith('/') ? imageUrl : `/${imageUrl}`
+
   return (
     <div className={styles['productCard']}>
       <div
-          className={styles['productImg']}
-          style={{ backgroundImage: `url(${imageUrl})` }}
-        ></div>
+        className={styles['productImg']}
+        style={{ backgroundImage: `url(${fixedImageUrl})` }}
+      ></div>
       <div className={styles['productCardContent']}>
-      <h2 className={styles['productCardTitle']}>{title}</h2>
+        <h2 className={styles['productCardTitle']}>{title}</h2>
         <div className={styles['productCardStatus']}>
           <span className={styles['productCardLabel']}></span> {status}
         </div>
@@ -36,14 +39,9 @@ export default function ProductListItemDetails({
           <p>{details}</p>
         </div>
         <div className={styles['productCardActions']}>
-          <div className={styles['productCardPrice']}>
-            {price}
-          </div>
-          <Link href={`/products/${productId}`}>
-          <button className={styles['productCardCta']}>BUY</button>
-          </Link>
+          <div className={styles['productCardPrice']}>{price}</div>
+          <BuyButton title={title} details={details} price={price} />
         </div>
-        
       </div>
     </div>
   )

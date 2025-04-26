@@ -23,8 +23,8 @@ export const Hero = () => {
           </p>
 
           <div className={styles['hero-content-offer']}>
-            <p>199.95$</p>
-            <h3>149.95$</h3>
+            <p>199.95€</p>
+            <h3>149.95€</h3>
           </div>
         </div>
 
